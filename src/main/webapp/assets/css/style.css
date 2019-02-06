@@ -1,0 +1,141 @@
+
+
+.icon-hover:hover {
+    color: #64b9b2;
+}
+ .report-button {
+   border-radius: 35% !important;
+   width: 80% !important;
+
+ }
+ 
+ .icon-fix {
+   /*line-height: 45px !important;*/
+   display: inline-block !important;
+   vertical-align: middle;
+   padding-left: 12px;   
+ }
+
+div.mdl-layout__drawer > nav.mdl-navigation > a.mdl-navigation__link {
+  display: inline-flex !important;
+  vertical-align: middle !important;
+}
+
+ .search-input {
+  /* background-color: #F4511E !important;
+   color: #fff !important;
+   border: 1px solid !important;
+   border-radius: 30% !important;
+   height: 30px !important;
+   width: 130px !important; */
+ }
+ body {
+   background-color: #1A1A1D;
+ }
+ 
+ .card-color {
+	background-color: #272727;
+	color: #FFFFFF;
+ }
+
+ .button-color {
+	background-color: #17E9E0;
+	color: #272727;
+
+ }
+ 
+
+
+ .jobTitle {
+	 
+	font-size: 16px;
+	font-weight: 300;
+ }
+ 
+ .aboutme {
+	font-family: 'Muli', sans-sarif;	
+ }
+ 
+ .cool-text {
+	font-family: 'muli';
+	color: #FFFFFF;
+ }
+ 
+ hr {
+
+    margin-left: 21px;
+    margin-right: 21px;
+ }
+.nav-trans {
+  background-color: transparent !important;
+}
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+.card-style 
+{
+  background-color: black !important;
+}
+
+.nav-style {
+  max-height: 45px !important;
+  height: 45px !important;
+}
+
+.person-image {
+  background-image: url(img/headerImage.jpeg);
+}
+
+.center-item {
+  position: center !important;
+  
+}
+
+.my-header-image {
+ width: 100%;
+ margin: 0 auto;
+ background-position: center;
+ background-repeat: no-repeat;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}
+
+.profile-image {
+ position: center !important;
+ border-radius: 50%;
+ width: 100%;
+ margin-bottom: 0px;
+ margin-top: 0px;
+ margin-left: 18px;
+ margin-right: 18px;
+ height: 35px;
+ display: inline-block;
+ background-position: center !important;
+ background-repeat: no-repeat;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}
+.full-width {
+  min-width: 60% !important;
+}
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 2;
+  cursor: pointer;
+}
