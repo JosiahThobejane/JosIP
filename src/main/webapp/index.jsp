@@ -8,42 +8,39 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JosIP | Your IP Address and GeoLocation information</title>
         
-        <link rel="stylesheet" href="assets/css/bulma.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
         
     </head>
     <body>
         <nav class="navbar is-dark is-fluid ">
             <div class="container">
-		<div class="navbar-brand">
-                    <a class="navbar-item" href="/">
-                        JosIP
-			<!--<img src="img/mf-logo.svg" alt="Josiah Thobejane | Java Developer, Designer &amp; Mentor" height="48">-->
-                    </a>
-		</div>
-		<div class="navbar-menu" id="navMenu">
+                <div class="navbar-brand">
+                        <a class="navbar-item" href="/">JosIP</a>
+                </div>
+                <div class="navbar-menu" id="navMenu">
                     <div class="navbar-end">			
-			<div class="navbar-item">
+                        <div class="navbar-item">
                             <p class="control"><a class="button is-white" href="#"><span>Say Hello</span></a></p>
-			</div>
+                        </div>
                     </div>
-		</div>
+                </div>
             </div>
         </nav>
         
     
         <section class="hero is-light is-small is-bold has-text-centered">
             <div class="hero-body">
-		<div class="container">
+                <div class="container">
                     <div class="columns is-centered">
-			<div class="column">
+                        <div class="column">
                             <h1 class="title is-spaced is-size-1-desktop is-size-2-tablet is-size-3-mobile">GeoLocation &amp;</h1>
                             <h2 class="subtitle is-size-4-desktop">All the things you need to know, <%= request.getRemoteAddr()  
                             %></h2>
-			</div>
+                        </div>
                     </div>
-		</div>
+                </div>
             </div>						
-	</section>
+	    </section>
                         
         <section class="container">
             <ul class="is-4-desktop">
