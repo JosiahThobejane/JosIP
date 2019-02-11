@@ -1,37 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package za.co.josiahthobejane.josipweb;
 
-import java.io.IOException;
+
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URI;
-//import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.URLEncoder;
-
 import com.google.gson.Gson;
-import java.util.Scanner;
 
-
-import za.co.josiahthobejane.josipweb.App;
-/**
- *
- * @author Josiah Thobejane
- */
 public class worker extends HttpServlet {
 
     public UserLocationData user = null;
@@ -66,14 +48,6 @@ public class worker extends HttpServlet {
             rr.close();
             // set values of our user
             setValues();
-
-            // print the values of our user
-            System.out.println("Hey there: " + System.getProperty("os.user") + "Your IP Address: " + userIP
-                    + "\nYour Country: " + location.getCountry() + "\nYour Province/Region: " + location.getRegion()
-                    + "\nYour City: " + location.getCity() + "\nYour Latitude: " + location.getLat()
-                    + "\nYour Longitude: " + location.getLng() + "\nYour Postal Code: " + location.getPostalCode()
-                    + "\nYour Time Zone: " + location.getTimezone());
-
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -83,26 +57,16 @@ public class worker extends HttpServlet {
     public void launchOnGoogleMaps(double latitude, double longitude) {
         String mapsLink = "https://www.google.com/maps/search/?api=1&query=";
         String parameters = Double.toString(latitude) + "," + Double.toString(longitude);
-        googleMapsLink = mapsLink + parameters;
-         try {
-            String MAP_link = mapsLink + URLEncoder.encode(parameters, "UTF-8");
-            
-            }
-        catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        googleMapsLink = mapsLink + parameters;        
     }
     
-    public String getClientIp(HttpServletRequest request)
-    {
+    //extract the clients IP address
+    public String getClientIp(HttpServletRequest request) {
         String userIpAddress = "";
         
-        if(request != null)
-        {
+        if(request != null) {
             userIpAddress = request.getHeader("X-FORWARDED-FOR");
-            if(userIpAddress == null || "".equals(userIpAddress))
-            {
+            if(userIpAddress == null || "".equals(userIpAddress)) {
                 userIpAddress = request.getRemoteAddr();
             }
         }
@@ -125,8 +89,7 @@ public class worker extends HttpServlet {
         
         getUserDetails(getClientIp(request));
         launchOnGoogleMaps(location.getLat(), location.getLng());
-        try {
-            
+        try {       
             request.setAttribute("IpAddress", request.getRemoteAddr());
             request.setAttribute("UserCountry", location.getCountry());
             request.setAttribute("UserProvince", location.getRegion());
@@ -138,7 +101,6 @@ public class worker extends HttpServlet {
             request.setAttribute("CountryFlag", "https://www.countryflags.io/" + location.getCountry() + "/flat/48.png");
             request.setAttribute("googleMapsLink", googleMapsLink);
           
-            
             RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
             dispatcher.forward(request, response);
             
@@ -184,7 +146,7 @@ public class worker extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "This servlet controls the whole application";
     }// </editor-fold>
 
 }

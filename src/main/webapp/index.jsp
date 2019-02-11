@@ -6,31 +6,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JosIP | Your IP Address and GeoLocation information</title>
-        
+        <title>JosIP | Your IP Address and GeoLocation information</title>        
         <link rel="stylesheet" href="https://github.com/Wikiki/bulma-pageloader/blob/master/dist/css/bulma-pageloader.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">     
-        <link rel="stylesheet" href="assets/css/style.css">
-        
+        <link rel="stylesheet" href="assets/css/style.css">        
     </head>
     
     <body>
         <div class="pageloader is-right-to-left"></div>
-        <!--
-        <nav class="navbar is-dark is-fluid ">
-            <div class="container">
-                <div class="navbar-brand">
-                        <a class="navbar-item" href="/">JosIP</a>
-                </div>
-                <div class="navbar-menu" id="navMenu">
-                    <div class="navbar-end">			
-                        <div class="navbar-item">
-                            <p class="control"><a class="button is-white" href="#"><span>Say Hello</span></a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav> -->
         
         <div class="container">
             <div class="center-vertical">
@@ -44,7 +27,6 @@
                             <hr class="line-color-light">
 
                             <div class="level">
-
                                 <div class="level-item ">
                                     <div>
                                         <p class="heading text-color-light">Country</p>                                        
@@ -108,8 +90,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
+            </div>            
         </div>
     </body>
 </html>
