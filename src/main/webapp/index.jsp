@@ -47,8 +47,8 @@
 
                                 <div class="level-item ">
                                     <div>
-                                        <p class="heading text-color-light">Country</p>
-                                        <p class="title text-color">${UserCountry}</p>
+                                        <p class="heading text-color-light">Country</p>                                        
+                                        <img src="${CountryFlag}" alt="country flag">
                                     </div>
                                 </div>
                                 <div class="level-item ">
@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="level-item">
                                     <div>
-                                        <a href="https://github.com/JosiahThobejane/JosIP" class="button is-info google-maps-button">GitHub</a>
+                                        <a href="https://github.com/JosiahThobejane/JosIP" target="_blank" class="button is-info google-maps-button">GitHub</a>
                                     </div>
                                 </div>
                                

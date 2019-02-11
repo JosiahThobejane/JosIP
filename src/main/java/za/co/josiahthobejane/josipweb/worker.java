@@ -36,7 +36,7 @@ public class worker extends HttpServlet {
 
     public UserLocationData user = null;
     public Location location;
-    String googleMapsLink = "lnk";
+    String googleMapsLink;
     
     public void setValues() {
         // set all the values
@@ -124,7 +124,9 @@ public class worker extends HttpServlet {
         PrintWriter out = response.getWriter();
         
         getUserDetails(getClientIp(request));
+        launchOnGoogleMaps(location.getLat(), location.getLng());
         try {
+            
             request.setAttribute("IpAddress", request.getRemoteAddr());
             request.setAttribute("UserCountry", location.getCountry());
             request.setAttribute("UserProvince", location.getRegion());
@@ -133,6 +135,7 @@ public class worker extends HttpServlet {
             request.setAttribute("UserLng", location.getLng());
             request.setAttribute("timezone", location.getTimezone());
             request.setAttribute("postalCode", location.getPostalCode());
+            request.setAttribute("CountryFlag", "https://www.countryflags.io/" + location.getCountry() + "/flat/48.png");
             request.setAttribute("googleMapsLink", googleMapsLink);
           
             
