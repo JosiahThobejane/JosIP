@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package za.co.josiahthobejane.josip;
+package za.co.josiahthobejane.josipweb;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,7 +36,7 @@ public class worker extends HttpServlet {
 
     public UserLocationData user = null;
     public Location location;
-    String googleMapsLink;
+    String googleMapsLink = "lnk";
     
     public void setValues() {
         // set all the values
@@ -81,12 +81,12 @@ public class worker extends HttpServlet {
     }
     
     public void launchOnGoogleMaps(double latitude, double longitude) {
-        String googleMapsLink = "https://www.google.com/maps/search/?api=1&query=";
+        String mapsLink = "https://www.google.com/maps/search/?api=1&query=";
         String parameters = Double.toString(latitude) + "," + Double.toString(longitude);
-      
+        googleMapsLink = mapsLink + parameters;
          try {
-            String MAP_link = googleMapsLink + URLEncoder.encode(parameters, "UTF-8");
-            this.googleMapsLink = MAP_link;
+            String MAP_link = mapsLink + URLEncoder.encode(parameters, "UTF-8");
+            
             }
         catch (IOException e) {
             // TODO Auto-generated catch block
@@ -131,7 +131,9 @@ public class worker extends HttpServlet {
             request.setAttribute("UserCity", location.getCity());
             request.setAttribute("UserLat", location.getLat());
             request.setAttribute("UserLng", location.getLng());
-            request.setAttribute("googleMapsLink", this.googleMapsLink);
+            request.setAttribute("timezone", location.getTimezone());
+            request.setAttribute("postalCode", location.getPostalCode());
+            request.setAttribute("googleMapsLink", googleMapsLink);
           
             
             RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");

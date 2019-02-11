@@ -8,10 +8,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JosIP | Your IP Address and GeoLocation information</title>
         
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+        <link rel="stylesheet" href="https://github.com/Wikiki/bulma-pageloader/blob/master/dist/css/bulma-pageloader.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">     
+        <link rel="stylesheet" href="assets/css/style.css">
         
     </head>
+    
     <body>
+        <div class="pageloader is-right-to-left"></div>
+        <!--
         <nav class="navbar is-dark is-fluid ">
             <div class="container">
                 <div class="navbar-brand">
@@ -25,47 +30,86 @@
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav> -->
         
-    
-        <section class="hero is-light is-small is-bold has-text-centered">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns is-centered">
-                        <div class="column">
-                            <h1 class="title is-spaced is-size-1-desktop is-size-2-tablet is-size-3-mobile">GeoLocation &amp;</h1>
-                            <h2 class="subtitle is-size-4-desktop">All the things you need to know, <%= request.getRemoteAddr()  
-                            %></h2>
+        <div class="container">
+            <div class="center-vertical">
+                <div class="card z-depth">
+                    <div class="card-content">
+                        <div class="content">
+                            <div class="has-text-centered">
+                                <p class="subtitle text-color-light">Your public IP Address</p>
+                                <p class="title text-color">${IpAddress}</p>
+                            </div>
+                            <hr class="line-color-light">
+
+                            <div class="level">
+
+                                <div class="level-item ">
+                                    <div>
+                                        <p class="heading text-color-light">Country</p>
+                                        <p class="title text-color">${UserCountry}</p>
+                                    </div>
+                                </div>
+                                <div class="level-item ">
+                                    <div>
+                                        <p class="heading text-color-light">Province</p>
+                                        <p class="title text-color">${UserProvince}</p>
+                                    </div>
+                                </div>
+                                <div class="level-item ">
+                                    <div>
+                                        <p class="heading text-color-light">City</p>
+                                        <p class="title text-color">${UserCity}</p>
+                                    </div>
+                                </div>
+                                <div class="level-item ">
+                                    <div>
+                                        <p class="heading text-color-light">Postal Code</p>
+                                        <p class="title text-color">${postalCode}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="line-color-light"><!-- The Technicals Part -->
+                            <div class="level">
+                                <div class="level-item">
+                                    <div>
+                                        <p class="heading text-color-light">Latitude</p>
+                                        <p class="title text-color">${UserLat}</p>
+                                    </div>
+                                </div>
+                                <div class="level-item">
+                                    <div>
+                                        <p class="heading text-color-light">Longitude</p>
+                                        <p class="title text-color">${UserLng}</p>
+                                    </div>
+                                </div>
+                                <div class="level-item">
+                                    <div>
+                                        <p class="heading text-color-light">Time Zone</p>
+                                        <p class="title text-color">${timezone}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="level">
+                                <div class="level-item">
+                                    <div>
+                                        <a href="${googleMapsLink}" target="_blank" class="button is-info google-maps-button">See in Google Maps</a>
+                                    </div>
+                                </div>
+                                <div class="level-item">
+                                    <div>
+                                        <a href="https://github.com/JosiahThobejane/JosIP" class="button is-info google-maps-button">GitHub</a>
+                                    </div>
+                                </div>
+                               
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>						
-	    </section>
-                        
-        <section class="container">
-            <ul class="is-4-desktop">
-                <li>
-                    <p class="is-4 is-bold">Ip Address: ${IpAddress}</p>
-                </li>
-                <li>
-                    <p class="is-4 is-bold">Country: ${UserCountry}</p>
-                </li>
-                <li>
-                    <p class="is-4 is-bold">Province: ${UserProvince}</p>
-                </li>
-                <li>
-                    <p class="is-4 is-bold">City: ${UserCity}</p>
-                </li>
-                <li>
-                    <p class="is-4 is-bold">Latitude: ${UserLat}</p>
-                </li>
-                <li>
-                    <p class="is-4 is-bold">Longitude: ${UserLng}</p>
-                    <a href="${googleMapsLink}" target="_blank" class="button has-background-info has-text-white is-normal">Open In Google Maps</a>
-                </li>
-                
-            </ul>
-        </section>
-        
+            </div>
+            
+        </div>
     </body>
 </html>
