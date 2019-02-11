@@ -34,7 +34,7 @@ public class worker extends HttpServlet {
     public void getUserDetails(String userIP) {
         location = new Location();
 
-        String API_KEY = "at_RaqDV0AgbNJzNFZpYzdPQWLBW3lQe";
+        String API_KEY = "YOUR_IPIFY_API_KEY";
         String API_URL = "https://geo.ipify.org/api/v1?";
         // the full api link
         String URL = API_URL + "apiKey=" + API_KEY + "&ipAddress=" + userIP;
